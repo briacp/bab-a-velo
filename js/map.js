@@ -78,8 +78,12 @@ const trajectoryExtremities = new Proxy(trajectoryExtremitiesArray, {
     // enable trajectoryMode if not
     svgElement.classList.add('trajectoryMode');
     trajectoryElement.style.display = 'block';
-    trajectoryStartElement.innerHTML = trajectoryExtremitiesArray[0];
-    trajectoryEndElement.innerHTML = trajectoryExtremitiesArray[1];
+    trajectoryStartElement.innerHTML = data.points[trajectoryExtremitiesArray[0]].label || trajectoryExtremitiesArray[0];
+    if (trajectoryExtremitiesArray[1]) {
+      trajectoryEndElement.innerHTML = data.points[trajectoryExtremitiesArray[1]].label || trajectoryExtremitiesArray[1];
+    } else {
+      trajectoryEndElement.innerHTML = "";
+    }
     return true;
   },
 });
