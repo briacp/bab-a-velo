@@ -14,8 +14,8 @@ const textGroup = document.getElementById("texts");
 const nameGroup = document.getElementById("names");
 const lineZonesGroup = document.getElementById("lineZones");
 const pointZonesGroup = document.getElementById("pointZones");
-const pointRadius = 6;
-const zonePointRadius = 18;
+const pointRadius = 3;
+const zonePointRadius = pointRadius * 3;
 const zoneLineWidth = 20;
 const singleLineWidth = 3;
 const doubleLineWidth = 2.5;
@@ -486,7 +486,7 @@ const drawLineZone = ({ start, end, index, className="" }) => {
     x2: end.x,
     y1: start.y,
     y2: end.y,
-    stroke: "#555",
+    stroke: "#fff",
     "stroke-width": zoneLineWidth,
     class: "zoneLine " + className,
   });
