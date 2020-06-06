@@ -9,6 +9,12 @@ const data = {
     "Bidart",
     "Bassussary",
   ],
+  poi: [
+    { label: "Gare de Boucau", href: "img/sncf.png", x:409, y:131, width: "20px" },
+    { label: "Gare de Bayonne", href: "img/sncf.png", x:460, y:268, width: "20px" },
+    { label: "Gare de Biarritz", href: "img/sncf.png", x:139, y:428, width: "20px" },
+    { label: "Atelier Vélo Txirrind'ola", href: "img/txirrindola.png", x:405, y:260, width: "50px" },
+  ],
   lines: [
     { start: "Mora", end: "Tarnos", difficulty: 0, time: 10 },
     { start: "Mora", end: "Forges", difficulty: 0, time: 8 },

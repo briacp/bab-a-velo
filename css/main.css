@@ -329,6 +329,12 @@ svg#map .bateau {
   stroke-dasharray: 8 10;
 }
 
+svg#map #texts .bateau,
+svg#map #texts .a_pied {
+  stroke: rgba(255,255,255,.5);
+  stroke-dasharray: none;
+}
+
 svg#map .a_pied {
   stroke: #be2ac3;
   stroke-dasharray: 1 3;

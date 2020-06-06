@@ -50,6 +50,11 @@ document.fonts.ready.then(function(fontFaceSet) {
     });
   }
 
+  // Points of Interets
+  data.poi.forEach((poi, index) => {
+    drawPoi(poi, index);
+  });
+
   // lines
   data.lines.forEach((line, index) => {
     // populate pointsMap object for contiguous screening
@@ -65,6 +70,7 @@ document.fonts.ready.then(function(fontFaceSet) {
         align: line.align,
         displayMin: line.displayMin,
         line: index,
+        className: line.className
       });
       drawLine({
         start: data.points[line.start],

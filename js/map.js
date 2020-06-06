@@ -14,6 +14,7 @@ const textGroup = document.getElementById("texts");
 const nameGroup = document.getElementById("names");
 const lineZonesGroup = document.getElementById("lineZones");
 const pointZonesGroup = document.getElementById("pointZones");
+const poiGroup = document.getElementById("poi");
 const pointRadius = 3;
 const zonePointRadius = pointRadius * 3;
 const zoneLineWidth = 20;
@@ -496,14 +497,23 @@ const drawLineZone = ({ start, end, index, className="" }) => {
   addClickEvent(newLine, () => toggleLine(index));
 };
 
-const drawNumber = ({ start, end, number, align, displayMin, line }) => {
+const drawNumber = ({ start, end, number, align, displayMin, line, className }) => {
   const lineCenter = getCenter({ start, end });
   const newText = document.createElementNS(
     "http://www.w3.org/2000/svg",
     "text"
   );
   const min = displayMin !== false ? " min" : "";
-  const textNode = document.createTextNode(number + min);
+
+  // Hack
+  let prefix = "";
+  if (className == "bateau") {
+    prefix = "🚲+⛴ ";
+  } else if (className == "a_pied") {
+    prefix = "🚲+🚶🏿‍♀️ ";
+  }
+
+  const textNode = document.createTextNode(prefix + number + min);
   newText.appendChild(textNode);
 
   let rotateAngle = getLineAngle({ start, end }) + 90;
@@ -570,4 +580,34 @@ const drawDoubleNumber = ({ start, end, numbers, displayMin, line }) => {
 
   textGroup.appendChild(newText1);
   textGroup.appendChild(newText2);
+};
+
+
+const drawPoi = (poi, index) => {
+  const newPoi = document.createElementNS(
+    "http://www.w3.org/2000/svg",
+    "image"
+    );
+    const newPoiTitle = document.createElementNS(
+      "http://www.w3.org/2000/svg",
+      "title"
+    );
+
+  // <image x="20" y="20" width="300" height="80" xlink:href="http://jenkov.com/images/layout/top-bar-logo.png" />
+
+  // add point
+  setAttributes(newPoi, {
+    x: poi.x,
+    y: poi.y,
+    href: poi.href,
+    width: poi.width || "20px",
+    class: "poi",
+    id: `poi_${index}`,
+  });
+
+  const textNodePoi = document.createTextNode(poi.label)
+  newPoiTitle.appendChild(textNodePoi);
+  newPoi.appendChild(newPoiTitle);
+
+  poiGroup.appendChild(newPoi);
 };
