@@ -218,7 +218,7 @@ svg#map {
 }
 
 .placeName__text {
-  font-size: .75rem;
+  font-size: .5rem;
   stroke-width: 2px;
 }
 
@@ -235,10 +235,13 @@ svg#map {
 .zoneLine {
   opacity: 0;
   cursor: pointer;
+  transition: opacity .4s ease-out;
 }
 
-.zonePoint:hover, .zoneLine:hover {
-  opacity: 0.1;
+.zonePoint:hover,
+.zoneLine:hover {
+  opacity: 0.3;
+  transition: opacity .2s ease-in;
 }
 
 .line__regular {
