@@ -211,10 +211,12 @@ svg#map {
 
 .placeName {
   opacity: 0;
+  transition: opacity .2s ease-out;
 }
 
 .placeName.placeName--active {
   opacity: 1;
+  transition: opacity .3s ease-in;
 }
 
 .placeName__text {
