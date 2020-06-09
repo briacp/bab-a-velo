@@ -56,11 +56,13 @@
             <span id="time_value">0</span>
             <abbr title="minutes">min</abbr>
           </strong>
+          <ul id="trajectory_detail">
+          </ul>
           <br />
           <button class="size-smaller link" onclick="trajectoryExtremities.reverse();">
             inverser
           </button>
-          <button class="size-smaller link" onclick="disableAllLines();">
+          <button class="size-smaller link" onclick="disableAllLines(); document.getElementById('trajectory_detail').style.display = 'none'">
             réinitialiser
           </button>
         </p>
@@ -194,6 +196,7 @@
   <script src="js/data.js"></script>
   <script src="js/helpers.js"></script>
   <script src="js/map.js"></script>
+  <script src="js/dijkstra.js"></script>
   <script src="js/main.js"></script>
 </body>
 

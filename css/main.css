@@ -481,3 +481,21 @@ button.link:focus:disabled {
   border-bottom-right-radius: 4px;
   margin-top: 0;
 }
+
+#trajectory_detail {
+  list-style: none;
+  margin: 1rem 0;
+  border: Solid 1px #7b6349;
+}
+
+#trajectory_detail li {
+  padding: 0.5rem .75rem;
+}
+
+li.odd {
+  background-color: #d0c0ae;
+}
+
+li.even {
+  background-color: #f4e6d2;
+}
